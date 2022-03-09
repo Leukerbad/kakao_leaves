@@ -19,7 +19,7 @@ namespace kakao_leaves.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Tasks";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
