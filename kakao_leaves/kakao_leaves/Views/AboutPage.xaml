@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="kakao_leaves.Views.AboutPage"
-             xmlns:vm="clr-namespace:kakao_leaves.ViewModels"
+             xmlns:vm="clr-namespace:kakao_leaves.ViewModels" 
+             xmlns:local="clr-namespace:kakao_leaves.Extensions"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
@@ -16,11 +17,18 @@
     </ContentPage.Resources>
 
     <Grid>
-        <Image>
-            <Image.Source>
-                <UriImageSource Uri="{Binding astroImage}"/>
-            </Image.Source>
-        </Image>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <local:PinchToZoomContainer>
+            <local:PinchToZoomContainer.Content>
+                <Image Grid.Row="0">
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding AstroImage}"/>
+                    </Image.Source>
+                </Image>
+            </local:PinchToZoomContainer.Content>
+        </local:PinchToZoomContainer>
     </Grid>
 
 </ContentPage>
