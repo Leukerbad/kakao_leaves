@@ -13,7 +13,7 @@ namespace kakao_leaves.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "Astronomy Picture of the Day";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
             Preparepage();
         }
